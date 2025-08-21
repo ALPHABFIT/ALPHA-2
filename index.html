@@ -10,7 +10,10 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
   
 </head>
 
@@ -18,7 +21,7 @@
 
     <!-- Loading Animation -->
   <div class="loading-screen">
-    <span class="loading-text"></span>
+    <span class="animate__animated animate__fadeInRightBig animate__delay-2s loading-text"></span>
   </div>
 
   <!-- Hero Section -->
@@ -441,12 +444,12 @@ const textElement = document.querySelector(".loading-text");
 setInterval(() => {
     textElement.textContent = texts[index];
     index = (index + 1) % texts.length;
-}, 1000);
+}, 800);
 
 window.addEventListener("load", () => {
     setTimeout(() => {
         document.querySelector(".loading-screen").style.display = "none";
-    }, 3850); // 2000ms = 2 seconds
+    }, 4000); 
 });
 </script>
 
