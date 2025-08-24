@@ -160,6 +160,8 @@ body {
 .nasm-text p {
   font-size: 1rem;
   line-height: 1.6;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .nasm-bottom h3 {
@@ -174,7 +176,9 @@ body {
   margin: 0 auto 20px;
   font-size: 1rem;
   line-height: 1.8;
-  text-align: center;
+  text-align: justify;
+  text-justify: inter-word;
+  
 }
 
 .about-us {
@@ -191,9 +195,10 @@ body {
 }
 
 .about-us p {
-  text-align: center;
   max-width: 1000px;
   margin: 0 auto 20px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* Responsive */
@@ -224,7 +229,7 @@ body {
     color: black;
 }
 .workouts-section {
-  padding: 80px 20px;
+  padding: 10px 20px;
   background-color: #fff;
 }
 
@@ -356,7 +361,10 @@ body {
 }
 
 .main-image {
-   max-width: -webkit-fill-available;
+   width: 100%;          
+   height: auto;         
+   display: block;       
+   object-fit: cover;
 }
 
 .man-hero-image {
@@ -403,15 +411,9 @@ body {
 }
 
 
-
-
-
-
-
-
 .transformation-section {
   background: #ffff;
-  padding: 60px 20px;
+  padding: 10px 20px;
   text-align: center;
 }
 
@@ -514,12 +516,21 @@ body {
 .feature-item ul {
     color: black;
     line-height: 26px;
+    list-style-position: outside;
+    padding-left: 1.2em;
+    text-align: left;
+}
+
+.feature-item ul li {
+  margin-bottom: 5px;
+  text-align: justify;
 }
 
 @media (max-width: 768px) {
   .features-container {
     flex-direction: column;
     align-items: center;
+    gap: 65px;
   }
 }
 
@@ -634,6 +645,9 @@ body {
 .footer-column {
   max-width: 250px;
 }
+.footer-column p{
+  line-height: 28px;
+}
 
 .footer-column h4 {
   font-size: 1.2rem;
@@ -686,6 +700,14 @@ body {
   .footer-content {
     flex-direction: column;
     align-items: center;
+    gap: 30px;
+    padding: 28px 20px 21px;
+  }
+  .footer-content.footer-column {
+    padding: 28px 20px 21px;
+  }
+  .footer-column p {
+    line-height: 28px;
   }
 }
 
