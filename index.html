@@ -20,9 +20,7 @@
 <body>
 
     <!-- Loading Animation -->
-  <div class="loading-screen">
-    <span class="animate__animated animate__fadeInRightBig animate__delay-2s loading-text"></span>
-  </div>
+  <div class="loading-screen"> <span class="loading-text"></span> </div>
 
   <!-- Hero Section -->
   <section class="hero-section">
@@ -150,7 +148,7 @@
       <h5>Join our online fitness program to experience a comprehensive, personalized approach to health and wellness. Our program, guided by NASM-certified trainers, offers 24/7 support, scientifically-backed training methods, and tailored workouts to meet your unique goals</h2>
     </div>
       <img src="./images/man-leg.png" alt="Stretch Pose" class="main-image" />
-      <img src="./images/under-gradient.png" alt="Paint Shadow" class="paint-overlay" />
+      <!-- <img src="./images/under-gradient.png" alt="Paint Shadow" class="paint-overlay" /> -->
   </section>
 
   <!-- Transformation Carousel Section -->
@@ -419,6 +417,9 @@
       el: ".swiper-pagination",
       clickable: true,
     },
+    autoplay: {
+      delay: 5000,
+    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -435,6 +436,7 @@
   });
 </script>
 
+
 <script>
 // JavaScript to rotate the text content
 const texts = ["FOCUS", "COMMIT", "TRANSFORM"];
@@ -444,15 +446,14 @@ const textElement = document.querySelector(".loading-text");
 setInterval(() => {
     textElement.textContent = texts[index];
     index = (index + 1) % texts.length;
-}, 800);
+}, 1000);
 
 window.addEventListener("load", () => {
     setTimeout(() => {
         document.querySelector(".loading-screen").style.display = "none";
-    }, 4000); 
+    }, 3200); // 2000ms = 2 seconds
 });
 </script>
-
 
 
 </body>

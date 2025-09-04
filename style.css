@@ -232,6 +232,9 @@ body {
   padding: 10px 20px;
   background-color: #fff;
 }
+.workout-card h3 {
+  text-transform: uppercase;
+}
 
 .container {
   max-width: 1280px;
@@ -378,24 +381,27 @@ body {
   position: absolute;
   bottom: 14rem;
   left: 0;
-  width: 100%;
   z-index: 2;
   pointer-events: none;
+  width: 100%;          /* Full width of container */
+  height: auto;         /* Keeps aspect ratio */
+  display: block;       /* Removes inline spacing issues */
+  object-fit: cover; 
 }
 
 .man-hero-overlay {
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  max-width: 800px;
-  font-family: "Anton", sans-serif;
-  background: rgba(0, 0, 0, 0.4); /* subtle dark background for readability */
-  border-radius: 10px;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    max-width: 800px;
+    font-family: "Anton", sans-serif;
+    background: rgb(0 0 0 / 71%);
+    border-radius: 10px;
 }
 
 .man-hero-overlay h2 {
@@ -407,6 +413,12 @@ body {
   .man-hero-overlay h2 {
     font-size: 1.4rem;
     padding: 10px;
+  }
+  .man-hero-overlay {
+    width: 90%;
+  }
+  .man-hero-section {
+    margin-top: 50px;
   }
 }
 
@@ -530,7 +542,7 @@ body {
   .features-container {
     flex-direction: column;
     align-items: center;
-    gap: 65px;
+    gap: 26px;
   }
 }
 
@@ -779,3 +791,14 @@ body {
 
 
 
+@media (max-width: 425px) {
+  .hero-section {
+    background-position: 20% center; /* align image to the right */
+  }
+  .nasm-section {
+    padding: 12px 20px;
+  }
+  .man-hero-section {
+    height: 55vh;
+}
+}
