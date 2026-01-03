@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Smooch&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+
 @font-face {
     font-family: 'FontAtom';
     src: url('/fonts/MBF\ ATOM\ V5.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
+
 
 * {
   margin: 0;
@@ -101,7 +104,8 @@ body {
   }
 
   .hero-overlay {
-    margin-top: 100px;
+    margin-top: 300px;
+    padding: 16px;
     background: rgba(0, 0, 0, 0.6);
   }
 
@@ -177,8 +181,6 @@ body {
   font-size: 1rem;
   line-height: 1.8;
   text-align: justify;
-  text-justify: inter-word;
-  
 }
 
 .about-us {
@@ -207,18 +209,21 @@ body {
     flex-direction: column;
     align-items: center;
   }
-
   .nasm-text,
   .nasm-image img {
     max-width: 100%;
     text-align: center;
   }
-
   .nasm-text h3 {
     font-size: 1.3rem;
   }
 }
 
+.man-hero-overlay h5 {
+  font-family: "Mouse Memoirs", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 
 
@@ -464,15 +469,6 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
-
 .features-section {
   background: #fff;
   padding: 50px 20px;
@@ -535,8 +531,8 @@ body {
 
 .feature-item ul li {
   margin-bottom: 5px;
-  text-align: justify;
 }
+
 
 @media (max-width: 768px) {
   .features-container {
@@ -544,12 +540,12 @@ body {
     align-items: center;
     gap: 26px;
   }
+  .section-heading {
+    font-size: 1.5rem !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 1px !important;
+  }
 }
-
-
-
-
-
 
 .faq-section {
   max-width: 800px;
@@ -612,14 +608,6 @@ body {
 .faq-answer p {
   margin: 0;
 }
-
-
-
-
-
-
-
-
 
 
 .custom-footer {
@@ -720,6 +708,21 @@ body {
   }
   .footer-column p {
     line-height: 28px;
+  }
+  .nasm-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: left;
+    word-spacing: -2px;
+  }
+  .nasm-bottom p {
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: left;
+    word-spacing: -2px;
+  }
+  .features-section {
+    padding: 18px 20px !important;
   }
 }
 
