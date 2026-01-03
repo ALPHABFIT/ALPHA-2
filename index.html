@@ -51,7 +51,7 @@
             An NASM personal trainer, distinguished by the prestigious NASM badge,
             embodies international excellence in fitness. This globally recognized
             certification represents the highest standards in exercise science,
-            ensuring trainers use cutting-edge, evidence-based methods. With NASM's
+            ensuring trainers use cutting-edge, evidence-based methods With NASM's
             elite training, these professionals craft highly effective,
             scientifically validated programs to achieve exceptional results and
             transform your fitness journey.
@@ -154,7 +154,7 @@
   <!-- Transformation Carousel Section -->
   <section class="transformation-section">
     <br>
-    <h2 class="transformation-title">PROOF NOT PROMISES — SEE THE SUCCESS</h2>
+    <h2 class="transformation-title">PROOF NOT PROMISES SEE THE SUCCESS</h2>
 
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
@@ -443,22 +443,35 @@
 
 
 <script>
-// JavaScript to rotate the text content
 const texts = ["COMMIT", "FOCUS", "TRANSFORM"];
 let index = 0;
 const textElement = document.querySelector(".loading-text");
 
-setInterval(() => {
-    textElement.textContent = texts[index];
-    index = (index + 1) % texts.length;
-}, 1000);
+function startTextRotation() {
+    setInterval(() => {
+        textElement.textContent = texts[index];
+        index = (index + 1) % texts.length;
+    }, 1000);
+}
 
-window.addEventListener("load", () => {
+window.addEventListener("load", async () => {
+    // Wait for all fonts to load
+    if (document.fonts) {
+        await document.fonts.ready;
+    }
+
+    // Small delay AFTER font load
+    setTimeout(() => {
+        startTextRotation();
+    }, 200); // smooth delay
+
+    // Hide loading screen later
     setTimeout(() => {
         document.querySelector(".loading-screen").style.display = "none";
-    }, 3200); // 2000ms = 2 seconds
+    }, 3200);
 });
 </script>
+
 
 
 </body>
