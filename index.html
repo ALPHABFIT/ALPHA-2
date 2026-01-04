@@ -20,7 +20,7 @@
 <body>
 
     <!-- Loading Animation -->
-  <div class="loading-screen"> <span class="loading-text" style="font-family: 'FontAtom', sans-serif;"></span> </div>
+  <div class="loading-screen"> <span class="loading-text"></span> </div>
 
   <!-- Hero Section -->
   <section class="hero-section">
@@ -443,33 +443,33 @@
 
 
 <script>
-const texts = ["COMMIT", "FOCUS", "TRANSFORM"];
-let index = 0;
-const textElement = document.querySelector(".loading-text");
+  const texts = ["COMMIT", "FOCUS", "TRANSFORM"];
+  let index = 0;
+  const textElement = document.querySelector(".loading-text");
 
-function startTextRotation() {
-    setInterval(() => {
-        textElement.textContent = texts[index];
-        index = (index + 1) % texts.length;
-    }, 1000);
-}
+  function startTextRotation() {
+      textElement.textContent = texts[0];
+      setInterval(() => {
+          index = (index + 1) % texts.length;
+          textElement.textContent = texts[index];
+      }, 1000);
+  }
 
-window.addEventListener("load", async () => {
-    // Wait for all fonts to load
-    if (document.fonts) {
-        await document.fonts.ready;
-    }
+  window.addEventListener("load", async () => {
+      if (document.fonts) {
+          await document.fonts.load("1em Anton");
+          await document.fonts.ready;
+      }
 
-    // Small delay AFTER font load
-    setTimeout(() => {
-        startTextRotation();
-    }, 200); // smooth delay
+      // SHOW only after font is 100% ready
+      textElement.style.visibility = "visible";
 
-    // Hide loading screen later
-    setTimeout(() => {
-        document.querySelector(".loading-screen").style.display = "none";
-    }, 3200);
-});
+      startTextRotation();
+
+      setTimeout(() => {
+          document.querySelector(".loading-screen").style.display = "none";
+      }, 3200);
+  });
 </script>
 
 
